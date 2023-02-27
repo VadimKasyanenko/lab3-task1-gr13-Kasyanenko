@@ -16,6 +16,8 @@ int main()
 			counter++;
 		}
 	}
-	printf("%d\n", counter);
+  
+	printf("Number of lucky numbers:""%d\n", counter);
+  return 0;
 }
 
