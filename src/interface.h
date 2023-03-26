@@ -8,6 +8,6 @@
 //function used in main.c file
 //implementation in server.c
 
-int lucky(int num);
+int isLucky(int number);
 
 #endif

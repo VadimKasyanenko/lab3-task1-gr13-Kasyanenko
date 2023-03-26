@@ -8,13 +8,27 @@
 
 #include "interface.h"
 
-int lucky(int num)
+#define numDigits 6 // number of digits in the number
+
+int isLucky(int number)
 {
-	if ((num % 1000) / 100 + (num % 1000) / 10 % 10 + (num % 1000) % 10 ==
-		(num / 1000) / 100 + (num / 1000) / 10 % 10 + (num / 1000) % 10) {
-		return 1;
-	}
-	else {
-		return 0;
-	}
+    if (number < 0 || number >= 1000000) {
+        // invalid input
+        return 0;
+    }
+
+    int sumFirstThree = 0;
+    int sumLastThree = 0;
+    for (int i = 0; i < numDigits; i++) {
+        int digit = number % 10;
+        number /= 10;
+        if (i < 3) {
+            sumFirstThree += digit;
+        }
+        else {
+            sumLastThree += digit;
+        }
+    }
+    return sumFirstThree == sumLastThree;
 }
+
