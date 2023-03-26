@@ -11,7 +11,7 @@ int main()
 {
 	int counter=0;
 	for (int i = 100000; i < 1000000; i++) {
-		if (lucky(i)==1) {
+		if (isLucky(i) == ) {
 			printf("%d\n", i);
 			counter++;
 		}
